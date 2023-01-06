@@ -5,7 +5,8 @@ const {
   getAllPost,
   getSinglePost,
   updatePost,
-} = require("../Controllers/Controller.js");
+  postLike,
+} = require("../Controllers/PostController.js");
 
 // get all posts
 router.get("/", getAllPost);
@@ -21,5 +22,8 @@ router.delete("/:id", deletePost);
 
 // get single post
 router.get("/:id", getSinglePost);
+
+// like post
+router.post("/:id", postLike)
 
 module.exports = router;

@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoDb = require("./DB/ConnectDb.js");
-const postRouter = require("./Routes/Routes.js");
+const postRouter = require("./Routes/PostRoutes.js");
+const userRouter = require("./Routes/UserRoutes.js");
 const multer = require("multer");
 const path = require("path");
 
@@ -33,8 +34,10 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
 
-// routes
+// post route
 app.use("/api/posts", postRouter);
+// user route
+app.use("/api/user", userRouter)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is connected to port ${process.env.PORT}`);

@@ -48,6 +48,7 @@ const deletePost = async (req, res) => {
   }
 };
 
+// get single post 
 const getSinglePost = async (req, res) => {
   const postId = req.params.id;
   try {
@@ -63,10 +64,16 @@ const getSinglePost = async (req, res) => {
   }
 };
 
+// post like
+const postLike = async (req, res) => {
+  
+}
+
 module.exports = {
   getAllPost,
   createPost,
   updatePost,
   deletePost,
   getSinglePost,
+  postLike,
 };
